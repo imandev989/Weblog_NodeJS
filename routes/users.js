@@ -1,0 +1,27 @@
+const { Router } = require("express");
+
+const userController = require("../controllers/userController")
+
+
+const router = new Router();
+
+
+//  @desc   Login Page
+//  @route  GET /users/login
+router.get("/login", userController.login );
+
+
+//  @desc   Login Handle
+//  @route  POST /users/login
+router.post("/login", userController.handleLogin );
+
+//  @desc   Register Page
+//  @route  GET /users/register
+router.get("/register", userController.register);
+
+//  @desc   Register Handle
+//  @route  POST /users/register
+// کد مدل قبلی رو حتما نگاه کن چون کامل ریفکتور  شد
+router.post("/register", userController.createUser);
+
+module.exports = router;
